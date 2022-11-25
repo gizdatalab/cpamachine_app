@@ -1,12 +1,11 @@
 import setuptools
 import glob
-import os
 def get_package_data():
         list_of_files = []
-        list_of_files = list_of_files + glob.glob(os.path.join('docStore','img'+'*.png'))
-        list_of_files = list_of_files + glob.glob(os.path.join('docStore','ndcs','r.txt'))
-        list_of_files = list_of_files + glob.glob(os.path.join('docStore','sample','*.txt'))
-        list_of_files = list_of_files + glob.glob(os.path.join('docStore','sample','*.json'))
+        list_of_files = list_of_files + glob.glob('appstore/docStore/img/*.png')
+        list_of_files = list_of_files + glob.glob('appstore/docStore/ndcs/*.txt')
+        list_of_files = list_of_files + glob.glob('appstore/docStore/sample/*.txt')
+        list_of_files = list_of_files + glob.glob('appstore/docStore/sample/*.json')
         return list_of_files
 
 
