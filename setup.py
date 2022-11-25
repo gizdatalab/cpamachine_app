@@ -24,7 +24,7 @@ setuptools.setup(
         author='prashant',
         author_email='prashant.singh@giz.de',
         packages=setuptools.find_packages(where='appstore'),  #same as name
-        # package_data={
-        # 'appstore': get_package_data,},
+        package_data={
+        'appstore': get_package_data(),},
         install_requires=install_requires, #external packages as dependencies
         )
