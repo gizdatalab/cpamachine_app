@@ -18,12 +18,12 @@ install_requires=[
 
 
 setuptools.setup(
-        name='appStore',
+        name='appstore',
         version='1.0.2',
         description='Climate Policy Analysis Machine',
         author='prashant',
         author_email='prashant.singh@giz.de',
-        packages=setuptools.find_packages(where='appStore'),  #same as name
+        packages=setuptools.find_packages(where='appstore'),  #same as name
         package_data={
         'appStore': get_package_data,},
         install_requires=install_requires, #external packages as dependencies
