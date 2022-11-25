@@ -11,7 +11,6 @@ def get_package_data():
 
 
 install_requires=[
-        "utils @ git+https://github.com/ps24601/haystack_utils.git@main#egg=utils",
         "st-annotated-text==3.0.0",
         "markdown==3.4.1",
         "streamlit-aggrid==0.3.3"
