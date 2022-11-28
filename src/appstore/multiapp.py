@@ -48,8 +48,14 @@ class MultiApp:
     def run(self):
         this_dir, this_filename = os.path.split(__file__)
         sys.path.append(this_dir)
+        st.write('***********')
+        st.write(this_dir)
+        st.write('***********')
+        for f in os.listdir(this_dir):
+            st.write(f)
+        st.write()
         st.sidebar.write(format_func=lambda app: app['title'])
-        image = Image.open('./docStore/img/sdsn.png')
+        image = Image.open('docStore/img/sdsn.png')
         st.sidebar.image(image, width =200)
        
         with st.sidebar:
