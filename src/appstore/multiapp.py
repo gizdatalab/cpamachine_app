@@ -1,9 +1,14 @@
 """Frameworks for running multiple Streamlit applications as a single app.
 """
+import sys
+import os
+this_dir, this_filename = os.path.split(__file__)
+sys.path.append(this_dir)
 import streamlit as st
 from PIL import Image
 from streamlit_option_menu import option_menu
 from utils.uploadAndExample import add_upload
+
 
 class MultiApp:
     """Framework for combining multiple streamlit applications.
