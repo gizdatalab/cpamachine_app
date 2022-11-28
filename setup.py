@@ -12,7 +12,7 @@ def get_package_data():
 install_requires=[
         "st-annotated-text==3.0.0",
         "markdown==3.4.1",
-        "streamlit-aggrid==0.3.1",
+        "streamlit-aggrid==0.3.3",
 ]
 
 
