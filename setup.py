@@ -12,7 +12,7 @@ def get_package_data():
 install_requires=[
         "st-annotated-text==3.0.0",
         "markdown==3.4.1",
-        "streamlit-aggrid==0.3.2",
+        "streamlit-aggrid",
 ]
 
 
@@ -22,7 +22,8 @@ setuptools.setup(
         description='Climate Policy Analysis Machine',
         author='prashant',
         author_email='prashant.singh@giz.de',
-        packages=setuptools.find_packages(where='appstore'),  #same as name
+        package_dir={"": "src"},
+        packages=setuptools.find_packages(where='src'),  
         package_data={
         'appstore': get_package_data(),},
         install_requires=install_requires, #external packages as dependencies
