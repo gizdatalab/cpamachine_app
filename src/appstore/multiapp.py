@@ -2,8 +2,6 @@
 """
 import sys
 import os
-this_dir, this_filename = os.path.split(__file__)
-sys.path.append(this_dir)
 import streamlit as st
 from PIL import Image
 from streamlit_option_menu import option_menu
@@ -48,9 +46,10 @@ class MultiApp:
         })
 
     def run(self):
-        
+        this_dir, this_filename = os.path.split(__file__)
+        sys.path.append(this_dir)
         st.sidebar.write(format_func=lambda app: app['title'])
-        image = Image.open('docStore/img/sdsn.png')
+        image = Image.open('./docStore/img/sdsn.png')
         st.sidebar.image(image, width =200)
        
         with st.sidebar:
