@@ -19,7 +19,6 @@ install_requires=[
 setuptools.setup(
         name='appstore',
         version='1.0.2',
-        package_dir={"": "src"},
         description='Climate Policy Analysis Machine',
         author='prashant',
         author_email='prashant.singh@giz.de',
