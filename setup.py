@@ -26,6 +26,6 @@ setuptools.setup(
         package_dir={"": "src"},
         packages=setuptools.find_packages(where='src'),  
         package_data={
-        'appstore': get_package_data(),},
+        "": get_package_data(),},
         install_requires=install_requires, #external packages as dependencies
         )
