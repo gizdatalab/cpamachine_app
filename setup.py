@@ -13,6 +13,7 @@ install_requires=[
         "st-annotated-text==3.0.0",
         "markdown==3.4.1",
         "streamlit-aggrid",
+        "streamlit_option_menu",
 ]
 
 
