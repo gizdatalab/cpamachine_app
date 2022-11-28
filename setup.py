@@ -20,7 +20,7 @@ setuptools.setup(
         name='appstore',
         version='1.0.2',
         description='Climate Policy Analysis Machine',
-        author='prashant',
+        author='Data Service Center GIZ',
         author_email='prashant.singh@giz.de',
         package_dir={"": "src"},
         packages=setuptools.find_packages(where='src'),  
