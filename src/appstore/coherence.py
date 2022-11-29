@@ -1,6 +1,5 @@
 # set path
-import glob, os, sys; 
-sys.path.append('../utils')
+import glob, os, sys
 
 import streamlit as st
 import ast
@@ -11,18 +10,22 @@ from utils.semantic_search import runSemanticPreprocessingPipeline,process_seman
 from utils.semantic_search import semanticSearchPipeline, runSemanticPipeline
 from st_aggrid import AgGrid
 from st_aggrid.shared import ColumnsAutoSizeMode
+_ROOT = os.path.abspath(os.path.dirname(__file__))
+def get_data(path):
+    return os.path.join(_ROOT, 'data', path)
+
 
 # Reading data and Declaring necessary variables
-with open('docStore/ndcs/countryList.txt') as dfile:
+with open(get_data('countryList.txt')) as dfile:
     countryList = dfile.read()
 countryList = ast.literal_eval(countryList)
 countrynames = list(countryList.keys())
     
-with open('docStore/ndcs/cca.txt', encoding='utf-8', errors='ignore') as dfile:
+with open(get_data('cca.txt'), encoding='utf-8', errors='ignore') as dfile:
     cca_sent = dfile.read()
 cca_sent = ast.literal_eval(cca_sent)
             
-with open('docStore/ndcs/ccm.txt', encoding='utf-8', errors='ignore') as dfile:
+with open(get_data('ccm.txt'), encoding='utf-8', errors='ignore') as dfile:
     ccm_sent = dfile.read()
 ccm_sent = ast.literal_eval(ccm_sent)
 
