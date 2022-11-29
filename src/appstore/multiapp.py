@@ -7,7 +7,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_option_menu import option_menu
 from utils.uploadAndExample import add_upload
-
+from os.path import dirname
 
 class MultiApp:
     """Framework for combining multiple streamlit applications.
@@ -52,6 +52,7 @@ class MultiApp:
         sys.path.append(this_dir)
         st.write('***********')
         st.write(this_dir)
+        this_dir  = dirname(this_dir)
         st.write('***********')
         for f in os.listdir(this_dir):
             st.write(f)
