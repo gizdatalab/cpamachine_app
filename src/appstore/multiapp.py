@@ -2,6 +2,7 @@
 """
 import pkg_resources
 import os
+import sys
 import streamlit as st
 from PIL import Image
 from streamlit_option_menu import option_menu
@@ -47,6 +48,13 @@ class MultiApp:
 
     def run(self):
         st.sidebar.write(format_func=lambda app: app['title'])
+        this_dir, this_filename = os.path.split(__file__)
+        sys.path.append(this_dir)
+        st.write('***********')
+        st.write(this_dir)
+        st.write('***********')
+        for f in os.listdir(this_dir):
+            st.write(f)
         DB_FILE = pkg_resources.resource_filename('appstore', 'docStore/img/sdsn.png')
         image = Image.open(DB_FILE)
         st.sidebar.image(image, width =200)
