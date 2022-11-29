@@ -1,6 +1,5 @@
 # set path
-import glob, os, sys; 
-sys.path.append('../utils')
+import glob, os, sys
 
 import streamlit as st
 import json
@@ -9,6 +8,18 @@ from utils.lexical_search import runLexicalPreprocessingPipeline, lexical_search
 from utils.semantic_search import runSemanticPreprocessingPipeline, semantic_keywordsearch
 from utils.checkconfig import getconfig
 from utils.streamlitcheck import checkbox_without_preselect
+_ROOT = os.path.abspath(os.path.dirname(__file__))
+def get_data(path):
+    return os.path.join(_ROOT, 'data', path)
+
+def check_keywords(dir_path):
+    if 'keywordexample.json' in os.listdir(dir_path):
+        with open(dir_path+ '/keywordexample.json','r') as json_file:
+            keywordexample = json.load(json_file)
+    else:
+        with open(get_data('/keywordexample.json'),'r') as json_file:
+            keywordexample = json.load(json_file)
+    return keywordexample
 
 # Declare all the necessary variables
 config = getconfig('paramconfig.cfg')
@@ -90,8 +101,8 @@ def app():
             st.write("120 sec(including emebedding creation)")
  
     with st.sidebar:
-        with open('docStore/sample/keywordexample.json','r') as json_file:
-            keywordexample = json.load(json_file)
+        
+        keywordexample = check_keywords('doc_store')
         
         # genre = st.radio("Select Keyword Category", list(keywordexample.keys()))
         st.caption("Select Keyword Category")
