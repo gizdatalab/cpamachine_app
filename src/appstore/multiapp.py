@@ -52,7 +52,8 @@ class MultiApp:
     def run(self):
         st.sidebar.write(format_func=lambda app: app['title'])
         this_dir, this_filename = os.path.split(__file__)
-        st.write(get_data('cca.txt'))
+        text1 = open(get_data('cca.txt'),"r")
+        st.write(text1.read())
         sys.path.append(this_dir)
         st.write('***********')
         st.write(this_dir)
