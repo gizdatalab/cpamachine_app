@@ -5,9 +5,12 @@ import os
 import sys
 import streamlit as st
 from PIL import Image
-from streamlit_option_menu import option_menu
-from utils.uploadAndExample import add_upload
+# from streamlit_option_menu import option_menu
+# from utils.uploadAndExample import add_upload
 from os.path import dirname
+_ROOT = os.path.abspath(os.path.dirname(__file__))
+def get_data(path):
+    return os.path.join(_ROOT, 'data', path)
 
 class MultiApp:
     """Framework for combining multiple streamlit applications.
@@ -49,6 +52,7 @@ class MultiApp:
     def run(self):
         st.sidebar.write(format_func=lambda app: app['title'])
         this_dir, this_filename = os.path.split(__file__)
+        st.write(get_data('cca.txt'))
         sys.path.append(this_dir)
         st.write('***********')
         st.write(this_dir)

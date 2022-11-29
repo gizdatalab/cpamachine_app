@@ -25,10 +25,9 @@ setuptools.setup(
         author_email='prashant.singh@giz.de',
         package_dir={"": "src"},
         packages=setuptools.find_packages(where='src'),  
-        # package_data={
-        # "appstore":['appstore/docStore/img/*.png','appstore/docStore/ndcs/*.txt',
-        #              'appstore/docStore/sample/*.txt','appstore/docStore/sample/*.json']},
-        data_files=[('ndcs',['src/appstore/docStore/ndcs/cca.txt','src/appstore/docStore/ndcs/ccm.txt',
-        'src/appstore/docStore/ndcs/countryList.txt'])],
+        package_data={
+        "appstore":['data/*.png','data/*.txt','data/*.json']},
+        # data_files=[('ndcs',['src/appstore/docStore/ndcs/cca.txt','src/appstore/docStore/ndcs/ccm.txt',
+        # 'src/appstore/docStore/ndcs/countryList.txt'])],
         install_requires=install_requires, #external packages as dependencies
         )
