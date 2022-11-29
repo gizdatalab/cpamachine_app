@@ -72,5 +72,5 @@ class MultiApp:
                             or else you can try a example document', 
                             options = ('Upload Document', 'Try Example'), 
                             horizontal = True)
-        add_upload(choice)
+        add_upload(choice, get_data('files.json'))
        
