@@ -17,7 +17,7 @@ def check_keywords(dir_path):
         with open(dir_path+ '/keywordexample.json','r') as json_file:
             keywordexample = json.load(json_file)
     else:
-        with open(get_data('/keywordexample.json'),'r') as json_file:
+        with open(get_data('keywordexample.json'),'r') as json_file:
             keywordexample = json.load(json_file)
     return keywordexample
 
