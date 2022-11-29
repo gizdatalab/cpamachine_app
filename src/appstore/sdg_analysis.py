@@ -1,6 +1,5 @@
 # set path
-import glob, os, sys; 
-sys.path.append('../utils')
+import glob, os, sys
 
 #import needed libraries
 import seaborn as sns

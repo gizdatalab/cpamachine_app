@@ -5,9 +5,8 @@ import os
 import sys
 import streamlit as st
 from PIL import Image
-# from streamlit_option_menu import option_menu
-# from utils.uploadAndExample import add_upload
-from os.path import dirname
+from streamlit_option_menu import option_menu
+from utils.uploadAndExample import add_upload
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 def get_data(path):
     return os.path.join(_ROOT, 'data', path)
@@ -51,20 +50,8 @@ class MultiApp:
 
     def run(self):
         st.sidebar.write(format_func=lambda app: app['title'])
-        this_dir, this_filename = os.path.split(__file__)
-        text1 = open(get_data('cca.txt'),"r")
-        st.write(text1.read())
-        sys.path.append(this_dir)
-        st.write('***********')
-        st.write(this_dir)
-        for f in os.listdir(this_dir):
-            st.write(f)
-        this_dir  = dirname(this_dir)
-        st.write('***********')
-        for f in os.listdir(this_dir):
-            st.write(f)
-        DB_FILE = pkg_resources.resource_filename('appstore', 'docStore/img/sdsn.png')
-        image = Image.open(DB_FILE)
+        imagefile = get_data('sdsn.png')
+        image = Image.open(imagefile)
         st.sidebar.image(image, width =200)
        
         with st.sidebar:

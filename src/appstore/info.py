@@ -1,4 +1,8 @@
 import streamlit as st
+import os
+_ROOT = os.path.abspath(os.path.dirname(__file__))
+def get_data(path):
+    return os.path.join(_ROOT, 'data', path)
 
 def app():
     
@@ -31,7 +35,7 @@ def app():
 
     c1, c2, c3 =  st.columns([8,1,12])
     with c1:
-        st.image("docStore/img/ndc.png")
+        st.image(get_data("ndc.png"))
     with c3:
         st.markdown('<div style="text-align: justify;">The manual extraction \
         of relevant information from text documents is a \
@@ -83,4 +87,4 @@ def app():
     <br>
     """
     st.markdown(intro, unsafe_allow_html=True)
-    st.image("docStore/img/paris.png")
+    st.image(get_data("paris.png"))
