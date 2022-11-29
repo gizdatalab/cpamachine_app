@@ -1,12 +1,12 @@
 import setuptools
-import glob
-def get_package_data():
-        list_of_files = []
-        list_of_files = list_of_files + glob.glob('appstore/docStore/img/*.png')
-        list_of_files = list_of_files + glob.glob('appstore/docStore/ndcs/*.txt')
-        list_of_files = list_of_files + glob.glob('appstore/docStore/sample/*.txt')
-        list_of_files = list_of_files + glob.glob('appstore/docStore/sample/*.json')
-        return list_of_files
+# import glob
+# def get_package_data():
+#         list_of_files = []
+#         list_of_files = list_of_files + glob.glob('appstore/docStore/img/*.png')
+#         list_of_files = list_of_files + glob.glob('appstore/docStore/ndcs/*.txt')
+#         list_of_files = list_of_files + glob.glob('appstore/docStore/sample/*.txt')
+#         list_of_files = list_of_files + glob.glob('appstore/docStore/sample/*.json')
+#         return list_of_files
 
 
 install_requires=[
@@ -26,6 +26,7 @@ setuptools.setup(
         package_dir={"": "src"},
         packages=setuptools.find_packages(where='src'),  
         package_data={
-        "": get_package_data(),},
+        "appstore":['appstore/docStore/img/*.png','appstore/docStore/ndcs/*.txt',
+                     'appstore/docStore/sample/*.txt','appstore/docStore/sample/*.json']},
         install_requires=install_requires, #external packages as dependencies
         )
