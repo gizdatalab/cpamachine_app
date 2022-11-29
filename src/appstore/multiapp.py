@@ -1,8 +1,8 @@
 """Frameworks for running multiple Streamlit applications as a single app.
 """
-import pkg_resources
 import os
 import sys
+import json
 import streamlit as st
 from PIL import Image
 from streamlit_option_menu import option_menu
@@ -10,6 +10,7 @@ from utils.uploadAndExample import add_upload
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 def get_data(path):
     return os.path.join(_ROOT, 'data', path)
+
 
 class MultiApp:
     """Framework for combining multiple streamlit applications.
@@ -48,7 +49,7 @@ class MultiApp:
             "function": func
         })
 
-    def run(self):
+    def run(self,document_store):
         st.sidebar.write(format_func=lambda app: app['title'])
         imagefile = get_data('sdsn.png')
         image = Image.open(imagefile)
@@ -72,5 +73,7 @@ class MultiApp:
                             or else you can try a example document', 
                             options = ('Upload Document', 'Try Example'), 
                             horizontal = True)
-        add_upload(choice, get_data('files.json'))
+        with(open(document_store + '/files.json','r')) as json_file:
+            files = json.load(json_file)
+        add_upload(choice, files)
        
