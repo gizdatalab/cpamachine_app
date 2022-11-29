@@ -52,6 +52,8 @@ class MultiApp:
         sys.path.append(this_dir)
         st.write('***********')
         st.write(this_dir)
+        for f in os.listdir(this_dir):
+            st.write(f)
         this_dir  = dirname(this_dir)
         st.write('***********')
         for f in os.listdir(this_dir):
